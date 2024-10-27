@@ -1,6 +1,10 @@
 class Palindrome {
     public static void main(String[] args) {
         int num = 824428;
+        if (num < 0){
+            System.out.println(false);
+            return;
+        }
         int org_num = num;
         int reverse = 0;
 
