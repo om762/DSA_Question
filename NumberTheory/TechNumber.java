@@ -8,7 +8,7 @@ class TechNumber {
         int org_num = num;
         int len = 0;
 
-        while (num > 0) {        // len = String.
+        while (num > 0) {        // len = String.length();
             len++;
             num /= 10;
         }
