@@ -1,28 +1,38 @@
 class BouncyNumber {
     public static void main(String[] args) {
-        int num = 754321;
-        boolean isIncreasing = false; // true for increasing order and false for decreasing order 
+        int num = 754821;
         
-        if (num % 10 == (num/10) % 10) {
+        // Handle numbers less than 100 (not bouncy)
+        if (num < 100) {
             System.out.println(false);
             return;
         }
-        else if (num % 10 > (num/10) % 10) {
-            isIncreasing = true;
-        }
 
+        boolean isIncreasing = false;
+        boolean isDecreasing = false;
+        
         int previous = num % 10;
         num /= 10;
 
         while (num > 0) {
             int current = num % 10;
-            if (( ! isIncreasing & current < previous) | ( isIncreasing & current > previous)) {
-                System.out.println(false);
+            if (current < previous) {
+                isDecreasing = true;
+            } else if (current > previous) {
+                isIncreasing = true;
+            }
+            
+            // If both increasing and decreasing patterns are found, it's a bouncy number
+            if (isIncreasing && isDecreasing) {
+                System.out.println(true);
                 return;
             }
+
             previous = current;
             num /= 10;
         }
-        System.out.println(true);
+
+        // If only increasing or only decreasing, it's not bouncy
+        System.out.println(false);
     }
 }
