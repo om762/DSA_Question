@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class clearBit {
+public class ResetBit {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter Number: ");
@@ -10,6 +10,7 @@ public class clearBit {
         
         int bitMask = 1 << pos;
 
+        System.out.println("Number in Binary: " + Integer.toBinaryString(num));
         System.out.println(num & ~bitMask);
 
         sc.close();
