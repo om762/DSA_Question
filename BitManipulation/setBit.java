@@ -14,6 +14,13 @@ public class setBit {
         System.out.println("Number in Binary: " + Integer.toBinaryString(num));
         System.out.println(num | (1 << pos));
 
+        int mask = 1 << pos;
+
+        int result = num | mask;
+
+        System.out.printf("Number before setting bit: %d (binary: %s)%n", num, Integer.toBinaryString(num));
+        System.out.printf("Number after setting bit at position %d: %d (binary: %s)", pos, result, Integer.toBinaryString(result));
+
         sc.close();
 
     }

@@ -17,6 +17,5 @@ public class countSetBit {
 
         System.out.println("Number of 1's: " + count);
 
-
     }
 }

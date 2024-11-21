@@ -1,6 +1,6 @@
 public class swapNumber {
     public static void main(String[] args) {
-        int a = 4, b = 5;
+        int a = 5, b = 7;
 
         a = a ^ b;
         b = a ^ b;
