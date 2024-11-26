@@ -39,6 +39,7 @@ public class MyArray {
         }
         return min;
     }
+
     public static int secondMaxArray(int arr[]) {
         int max = arr[0];
         int secondMax = arr[0];
@@ -76,6 +77,7 @@ public class MyArray {
         }
         return ThirdMax;
     }
+
     public static int ThirdMinArray(int arr[]) {
         int min = arr[0];
         int secondMin = arr[0];
