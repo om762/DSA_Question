@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class MyArray {
     public static void printArray(int arr[]) {
         for (int val: arr) {
@@ -90,5 +92,64 @@ public class MyArray {
             }
         }
         return ThirdMin;
+    }
+
+    public static void inputArray(int arr[]) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter Elements of array:");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = scanner.nextInt();
+        }
+        System.out.println("All elements are entered.");
+        scanner.close();
+    }
+
+    public static void printArrayRange(int arr[], int start, int end) {
+        
+    }
+
+    public static void updateByIndex(int arr[], int index, int newValue) {
+        if (index < 0 || index > arr.length){
+            System.out.println("Invalid Index: Out of Range");
+            return;
+        }
+
+        arr[index] = newValue;
+    }
+
+    public static int linearSearch(int arr[], int val) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == val)
+                return i;
+        }
+        return -1;
+    }
+
+    public static void updateByValue(int arr[], int oldValue, int newValue) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == oldValue)
+                arr[i] = newValue;     // For replacing all the oldValues by newValues
+        }
+    }
+
+
+    public static int binarySearch(int arr[], int val) {
+        int left = 0;
+        int right = arr.length;
+
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (arr[mid] == val) {
+                return mid;
+            }
+            else if (arr[mid] > val) {
+                right = mid - 1;
+            }
+
+            else {
+                left = mid + 1;
+            }
+        }
+        return -1;
     }
 }
